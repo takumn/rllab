@@ -64,13 +64,13 @@ MUJOCO_KEY_PATH = osp.expanduser("~/.mujoco")
 if osp.exists(osp.join(osp.dirname(__file__), "config_personal.py")):
     from config_personal import *
 else:
-    print "Creating your personal config from template..."
+    print("Creating your personal config from template...")
     from shutil import copy
     copy(osp.join(PROJECT_PATH, "rllab/config_personal_template.py"), osp.join(PROJECT_PATH, "rllab/config_personal.py"))
     from config_personal import *
-    print "Personal config created, but you should probably edit it before further experiments " \
-          "are run"
+    print("Personal config created, but you should probably edit it before further experiments " \
+          "are run")
     if 'CIRCLECI' not in os.environ:
-        print "Exiting."
+        print("Exiting.")
         import sys; sys.exit(0)
 
